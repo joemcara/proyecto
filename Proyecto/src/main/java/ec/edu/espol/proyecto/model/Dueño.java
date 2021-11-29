@@ -92,9 +92,18 @@ public class Dueño {
         String telefono = sc.next();
         System.out.println("ingrese el email: ");
         String email= sc.next();
-        ArrayList<Mascota> mascotasD = new ArrayList<Mascota>();
-        System.out.println("cuantas mascotas tiene este Dueño ");
+        ArrayList<Mascota> mascotasL = new ArrayList<Mascota>();
+        
+        Dueño nuevo = new Dueño(id,nombres,apellidos,telefono,email,mascotasL);
+        
+        return nuevo;
     }
+    
+    public void addMascota(Mascota nueva){
+        this.getMascota().add(nueva);
+    }
+    
+    
   
 
 }
