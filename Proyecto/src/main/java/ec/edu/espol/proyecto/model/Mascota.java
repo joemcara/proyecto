@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.proyecto.model;
 
+import ec.edu.espol.proyecto.uil.Util;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -101,11 +102,12 @@ public class Mascota {
     public void setInscripciones(ArrayList<Inscripciones> inscripciones) {
         this.inscripciones = inscripciones;
     }
-    
+ /*   
     public static Mascota nextMascota(Scanner sc){
         System.out.println("ingrese datos de la mascota para agregar");
-        System.out.println("id");
-        int id = sc.nextInt();
+        System.out.println("nombre del archivo del concurso en el cual esta la mascota:");
+        String nomFile = sc.next();
+        int id = Util.nextID(nomFile);        
         System.out.println("nombre");
         String nombre = sc.next();
         System.out.println("raza");
@@ -113,8 +115,10 @@ public class Mascota {
         System.out.println("fecha nacimiento de la siguiente forma: año-mes-dia");
         String date = sc.next();
         LocalDate fecha = LocalDate.parse(date);
+        System.out.println("El tipo de mascota");
+        String tipo = sc.next();
         
     }
-    
+   */ 
     
 }

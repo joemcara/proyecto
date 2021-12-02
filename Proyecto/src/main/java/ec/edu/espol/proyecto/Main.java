@@ -4,6 +4,8 @@
  */
 package ec.edu.espol.proyecto;
 
+import ec.edu.espol.proyecto.uil.Menu;
+
 /**
  *
  * @author Yoser
@@ -14,7 +16,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("hola es el comienzo de nuestro proyecto UwU");
+        Menu.menuOpciones();
     }
     
 }
