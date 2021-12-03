@@ -42,6 +42,7 @@ public class Menu {
                 case 2:
                     Mascota nuevaM = Mascota.nextMascota(teclado); 
                     nuevaM.saveFile("Mascotas.txt");
+                    break;
             }
                 
         }while (caso != 9); 
