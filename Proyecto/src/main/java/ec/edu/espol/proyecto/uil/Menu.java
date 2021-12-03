@@ -5,6 +5,7 @@
 package ec.edu.espol.proyecto.uil;
 
 import ec.edu.espol.proyecto.model.Dueño;
+import ec.edu.espol.proyecto.model.Mascota;
 import java.util.Scanner;
 
 /**
@@ -18,6 +19,7 @@ public class Menu {
     
     public static void menuOpciones() {
         int caso;
+        Scanner teclado = new Scanner(System.in);
         do{
         Scanner sc = new Scanner(System.in);
         System.out.println("Eliga una opcion del siguiente menu ");
@@ -34,12 +36,12 @@ public class Menu {
         
             switch (caso) {
                 case 1:
-                    caso = 1;
-                    Scanner teclado = new Scanner(System.in);
-                    Dueño n = Dueño.nextDueño(teclado);
-                    n.saveFile("Dueños.txt");
+                    Dueño nuevoD = Dueño.nextDueño(teclado);
+                    nuevoD.saveFile("Dueños.txt");
                     break;
-                case 2:    
+                case 2:
+                    Mascota nuevaM = Mascota.nextMascota(teclado); 
+                    nuevaM.saveFile("Mascotas.txt");
             }
                 
         }while (caso != 9); 
