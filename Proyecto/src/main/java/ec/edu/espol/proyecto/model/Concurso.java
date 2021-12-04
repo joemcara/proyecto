@@ -4,6 +4,10 @@
  */
 package ec.edu.espol.proyecto.model;
 
+import ec.edu.espol.proyecto.uil.Util;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -126,10 +130,35 @@ public class Concurso {
     }
     
     
-    public static Concurso nextConcuurso(Scanner sc){
+    public static Concurso nextConcurso(Scanner sc){
         System.out.println("ingrese datos del concurso");
         sc.useDelimiter("\n");
-        System.out.println("");
+        System.out.println("Ingrese el nombre del concurso");
+        int id = Util.nextID("concurso.txt");
+        String nombreC = sc.next();
+        System.out.println("fecha actual: año-mes-dia");
+        String dateActual = sc.next();
+        LocalDate fechaA = LocalDate.parse(dateActual);
+        System.out.println("fecha de inicio del concurso: año-mes-dia");
+        String dateInicio = sc.next();
+        LocalDate fechaIn = LocalDate.parse(dateInicio);
+        System.out.println("fecha de fin del concurso: año-mes-dia");
+        String dateFin = sc.next();
+        LocalDate fechaFin = LocalDate.parse(dateFin);
+        System.out.println("Ingrese la tematica");
+        String tematica = sc.next();
+        System.out.println("ingrese el valor del consurso");
+        double costo = sc.nextDouble();
+        Concurso nuevo = new Concurso(id,nombreC,fechaA,fechaIn,fechaFin,tematica,costo);
+        return nuevo;
+    }
+    
+     public void saveFile(String nomFile) {
+        try ( PrintWriter pw = new PrintWriter(new FileOutputStream(new File(nomFile), true))) {
+            pw.println(id + "|" + nombre + "|" + fechaActual + "|" + fechaInicioIns + "|" + fechaFinIns + "|" + tematica+"|"+costo);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

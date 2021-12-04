@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.proyecto.uil;
 
+import ec.edu.espol.proyecto.model.Concurso;
 import ec.edu.espol.proyecto.model.Dueño;
 import ec.edu.espol.proyecto.model.Mascota;
 import java.util.Scanner;
@@ -43,6 +44,10 @@ public class Menu {
                     Mascota nuevaM = Mascota.nextMascota(teclado); 
                     nuevaM.saveFile("Mascotas.txt");
                     break;
+                case 3:
+                    Concurso nuevoC = Concurso.nextConcurso(teclado);
+                    nuevoC.saveFile("Concurso.txt");
+                    
             }
                 
         }while (caso != 9); 

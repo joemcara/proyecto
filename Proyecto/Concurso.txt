@@ -1,0 +1,2 @@
+1|mascotas disfrazadas|2021-12-23|2022-01-03|2022-02-13|disfraces|23.0
+2|mejor gato |2021-12-04|2022-01-14|2022-03-04|disfraces|25.5
