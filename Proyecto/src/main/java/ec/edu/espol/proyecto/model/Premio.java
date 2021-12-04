@@ -4,6 +4,7 @@
  */
 package ec.edu.espol.proyecto.model;
 
+import ec.edu.espol.proyecto.uil.Util;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
@@ -15,7 +16,7 @@ import java.util.Scanner;
  *
  * @author Yoser
  */
-class Premio {
+public class Premio {
 
     private int id;
     private int puesto;
@@ -23,7 +24,7 @@ class Premio {
     private int idConcurso;
     private Concurso concurso;
 
-    public Premio(int id, int puesto, String descripcion, int idConcurso, Concurso concurso) {
+    public Premio(int id, int puesto, String descripcion, int idConcurso) {
         this.id = id;
         this.puesto = puesto;
         this.descripcion = descripcion;
@@ -80,7 +81,7 @@ class Premio {
 
     public void saveFile(String nomFile) {
         try ( PrintWriter pw = new PrintWriter(new FileOutputStream(new File(nomFile), true))) {
-            pw.print(id + "|" + puesto + "|" + descripcion + "|" + idConcurso);
+            pw.print(id + "|" + puesto + "|" + descripcion + "|" + idConcurso + "\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -112,4 +113,21 @@ class Premio {
         return 0;
 
     }
+    
+    public static Premio nextPremio(Scanner sc){
+        sc.useDelimiter("\n");
+        System.out.println("ingrese datos de un concurso");
+        int id = Util.nextID("Premio.txt");
+        System.out.println("Ingrese al puesto que pertenece este premio");
+        int puesto = sc.nextInt();
+        System.out.println("Ingrese la descripcion del Premio ");
+        String descripcion = sc.next();
+        System.out.println("Ingrese el nombre del concurso ");
+        String nombre = sc.next();
+        int idConcurso = Premio.idDueño(nombre);
+        
+        Premio nuevo = new Premio(id,puesto,descripcion,idConcurso);
+        return nuevo; 
+    }
 }
+
