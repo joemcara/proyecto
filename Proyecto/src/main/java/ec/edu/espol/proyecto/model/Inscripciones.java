@@ -23,8 +23,7 @@ public class Inscripciones {
     private int idmascota;
     private int idconcurso;
 
-    public Inscripciones(int id, double valor, LocalDate fecha_inscripcion,int idM, int idC) {
-        this.id = id;
+    public Inscripciones(int id,int idM, int idC, double valor, LocalDate fecha_inscripcion) {
         this.valor = valor;
         this.fecha_inscripcion = fecha_inscripcion;
         this.idmascota = idM;
@@ -93,8 +92,8 @@ public class Inscripciones {
         int idConcurso = Premio.idDueño(concurso);
         int idmascota= Premio.idMascota(mascota);
         
-        Inscripciones nuevo = new Inscripciones(id,valor,fechaFin,idmascota,idConcurso);
-        
+        Inscripciones nuevo = new Inscripciones(id,idConcurso,idmascota,valor,fechaFin);
+       
         return nuevo; 
     }
     

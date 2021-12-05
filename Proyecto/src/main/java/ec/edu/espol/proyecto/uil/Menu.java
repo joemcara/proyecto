@@ -68,7 +68,7 @@ public class Menu {
                     int cantC = sc.nextInt();
                     for (int i = 0; i < cantC; i++) {
                         Criterio nuevoCriterio = Criterio.nextCriterio(teclado);
-                        nuevoCriterio.saveFile("Criterio.txt");
+                        nuevoCriterio.saveFile("Inscripciones.txt");
                     }
                     break;
                 case 6:

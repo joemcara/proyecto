@@ -17,57 +17,54 @@ import java.util.Scanner;
  * @author Yoser
  */
 public class Criterio {
-
     private int id;
+    private int puesto;
     private String descripcion;
-    private ArrayList<Evaluacion> evaluacion;
     private int idConcurso;
     private Concurso concurso;
 
-    public Criterio(int id, String descripcion, int idConcurso) {
+    public Criterio(int id, int puesto, String descripcion, int idConcurso) {
         this.id = id;
+        this.puesto = puesto;
         this.descripcion = descripcion;
         this.idConcurso = idConcurso;
         this.concurso = null;
-
     }
 
-    //getters
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPuesto() {
+        return puesto;
+    }
+
+    public void setPuesto(int puesto) {
+        this.puesto = puesto;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public ArrayList<Evaluacion> getEvaluacion() {
-        return evaluacion;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public int getIdConcurso() {
         return idConcurso;
     }
 
-    public Concurso getConcurso() {
-        return concurso;
-    }
-    //setters
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public void setEvaluacion(ArrayList<Evaluacion> evaluacion) {
-        this.evaluacion = evaluacion;
-    }
-
     public void setIdConcurso(int idConcurso) {
         this.idConcurso = idConcurso;
+    }
+
+    public Concurso getConcurso() {
+        return concurso;
     }
 
     public void setConcurso(Concurso concurso) {
@@ -76,17 +73,15 @@ public class Criterio {
 
     @Override
     public String toString() {
-        return "Criterio{" + "id=" + id + ", descripcion=" + descripcion + ", evaluacion=" + evaluacion + ", idConcurso=" + idConcurso + '}';
+        return "Criterio{" + "id=" + id + ", puesto=" + puesto + ", descripcion=" + descripcion + ", idConcurso=" + idConcurso + ", concurso=" + concurso + '}';
     }
-
     public void saveFile(String nomFile) {
         try ( PrintWriter pw = new PrintWriter(new FileOutputStream(new File(nomFile), true))) {
-            pw.print(id + "|" + descripcion + "|" + idConcurso + "\n");
+            pw.print(id + "|" + puesto + "|" + descripcion + "|" + idConcurso + "\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-
     public static ArrayList<Concurso> readFile(String nomFile) {
         ArrayList<Concurso> concursos = new ArrayList<>();
         try ( Scanner sc = new Scanner(new File(nomFile))) {
@@ -111,20 +106,22 @@ public class Criterio {
             }
         }
         return 0;
+
     }
     
-    public static Criterio nextCriterio(Scanner sc) {
+    public static Criterio nextCriterio(Scanner sc){
         sc.useDelimiter("\n");
         System.out.println("ingrese datos del criterio");
         int id = Util.nextID("Criterios.txt");
+        System.out.println("Ingrese al puesto que pertenece este criterio");
+        int puesto = sc.nextInt();
         System.out.println("Ingrese la descripcion del Criterio ");
         String descripcion = sc.next();
         System.out.println("Ingrese el nombre del concurso ");
         String nombre = sc.next();
         int idConcurso = Criterio.idConcurso(nombre);
-
-        Criterio nuevo = new Criterio(id, descripcion, idConcurso);
-        return nuevo;
+        
+        Criterio nuevo = new Criterio(id,puesto,descripcion,idConcurso);
+        return nuevo; 
     }
 }
-       
