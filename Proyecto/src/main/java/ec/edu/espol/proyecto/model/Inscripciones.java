@@ -17,13 +17,14 @@ import java.util.Scanner;
  * @author Yoser
  */
 public class Inscripciones {
+
     private int id;
     private double valor;
     private LocalDate fecha_inscripcion;
     private int idmascota;
     private int idconcurso;
 
-    public Inscripciones(int id,int idM, int idC, double valor, LocalDate fecha_inscripcion) {
+    public Inscripciones(int id, int idM, int idC, double valor, LocalDate fecha_inscripcion) {
         this.valor = valor;
         this.fecha_inscripcion = fecha_inscripcion;
         this.idmascota = idM;
@@ -62,8 +63,6 @@ public class Inscripciones {
         this.idconcurso = concurso;
     }
 
-    
-
     @Override
     public String toString() {
         return "Inscripciones{" + "valor=" + valor + ", fecha_inscripcion=" + fecha_inscripcion + ", mascota=" + idmascota + ", concurso=" + idconcurso + '}';
@@ -71,17 +70,18 @@ public class Inscripciones {
 
     public void saveFile(String nomFile) {
         try ( PrintWriter pw = new PrintWriter(new FileOutputStream(new File(nomFile), true))) {
-            pw.print(id+"|"+idmascota+"|"+idconcurso+"|"+valor + "|" + fecha_inscripcion);
+            pw.print(id + "|" + idmascota + "|" + idconcurso + "|" + valor + "|" + fecha_inscripcion);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
+
     }
-    public static Inscripciones nextInscripcion(Scanner sc){
+
+    public static Inscripciones nextInscripcion(Scanner sc) {
         sc.useDelimiter("\n");
         System.out.println("Ingrese el nombre de la mascota");
         int id = Util.nextID("Inscripciones.txt");
-        String mascota=sc.nextLine();
+        String mascota = sc.nextLine();
         System.out.println("Ingrese el nombre del concurso");
         String concurso = sc.nextLine();
         System.out.println("Ingrese el valor a pagar");
@@ -90,11 +90,11 @@ public class Inscripciones {
         String fecha = sc.next();
         LocalDate fechaFin = LocalDate.parse(fecha);
         int idConcurso = Premio.idDueño(concurso);
-        int idmascota= Premio.idMascota(mascota);
-        
-        Inscripciones nuevo = new Inscripciones(id,idConcurso,idmascota,valor,fechaFin);
-       
-        return nuevo; 
+        int idmascota = Premio.idMascota(mascota);
+
+        Inscripciones nuevo = new Inscripciones(id, idConcurso, idmascota, valor, fechaFin);
+
+        return nuevo;
     }
-    
+
 }
