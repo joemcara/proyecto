@@ -6,7 +6,9 @@ package ec.edu.espol.proyecto.uil;
 
 import ec.edu.espol.proyecto.model.Premio;
 import ec.edu.espol.proyecto.model.Concurso;
+import ec.edu.espol.proyecto.model.Criterio;
 import ec.edu.espol.proyecto.model.Dueño;
+import ec.edu.espol.proyecto.model.Inscripciones;
 import ec.edu.espol.proyecto.model.Mascota;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -56,13 +58,22 @@ public class Menu {
                 case 4:
                     System.out.println("Ingrese la cantidad de premios");
                     int cantP = sc.nextInt();
-                    int inicio = 0;
-                    while(inicio != cantP){
+                    for (int i = 0; i < cantP; i++) {
                         Premio nuevoP = Premio.nextPremio(teclado);
                         nuevoP.saveFile("Premio.txt");
-                        inicio++;
                     }
                     break;
+                case 5:
+                    System.out.println("Ingrese la cantidad de criterios");
+                    int cantC = sc.nextInt();
+                    for (int i = 0; i < cantC; i++) {
+                        Criterio nuevoCriterio = Criterio.nextCriterio(teclado);
+                        nuevoCriterio.saveFile("Criterio.txt");
+                    }
+                    break;
+                case 6:
+                    Inscripciones nuevaIns = Inscripciones.nextInscripcion(teclado);
+                    nuevaIns.saveFile("Inscripcione.txt");
             }
 
         } while (caso != 9);

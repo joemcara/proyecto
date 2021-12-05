@@ -129,5 +129,15 @@ public class Premio {
         Premio nuevo = new Premio(id,puesto,descripcion,idConcurso);
         return nuevo; 
     }
+    public static int idMascota(String nombremascota) {
+        ArrayList<Concurso> lista = Premio.readFile("Mascota.txt");
+        for (Concurso unico : lista) {
+            if (unico.getNombre().equalsIgnoreCase(nombremascota)) {
+                return unico.getId();
+            }
+        }
+        return 0;
+
+    }
 }
 

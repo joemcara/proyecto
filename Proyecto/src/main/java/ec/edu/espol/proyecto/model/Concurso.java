@@ -37,9 +37,9 @@ public class Concurso {
         this.fechaFinIns = fechaFin;
         this.tematica = tematica;
         this.costo = costo;
-        this.inscripciones = new ArrayList<Inscripciones>();
-        this.premios = new ArrayList<Premio>();
-        this.criterio = new ArrayList<Criterio>();
+        this.inscripciones = new ArrayList<>();
+        this.premios = new ArrayList<>();
+        this.criterio = new ArrayList<>();
     }
 
     //getters
