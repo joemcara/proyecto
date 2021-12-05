@@ -76,13 +76,15 @@ public class Menu {
                 case 6:
                     Inscripciones nuevaIns = Inscripciones.nextInscripcion(teclado);
                     nuevaIns.saveFile("Inscripcione.txt");
+                    break;
                 case 7:
                     MiembroJurado nuevoJ = MiembroJurado.nextJurado(teclado);
                     nuevoJ.saveFile("MiembroJurado.txt");
                     break;                    
                 case 8:
                     Evaluacion nuevoE = Evaluacion.nextEvaluacion(teclado);
-                    nuevoE.saveFile("Evaluacion.txt");                    
+                    nuevoE.saveFile("Evaluacion.txt"); 
+                    break;
             }
         } while (caso != 9);
     }
