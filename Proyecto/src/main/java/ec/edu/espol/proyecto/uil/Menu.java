@@ -82,9 +82,8 @@ public class Menu {
                     break;                    
                 case 8:
                     Evaluacion nuevoE = Evaluacion.nextEvaluacion(teclado);
-                    nuevoE.saveFile("Evaluacion.txt");                      
+                    nuevoE.saveFile("Evaluacion.txt");                    
             }
-
         } while (caso != 9);
     }
 }

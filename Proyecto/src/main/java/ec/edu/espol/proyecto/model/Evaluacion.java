@@ -1,16 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
-La opción 7 de MiembroJurado recibe los datos de un miembro del jurado 
-por teclado y almacena la información del dueño en el archivo miembroJurados.txt.
 
-La opción 8 de Evaluación recibe el email del jurado, el id de la inscripción, 
-el id del criterio que va evaluar y la nota de la evaluación que desea poner el 
-miembro del jurado. La información de las evaluaciones se guarda en el archivo 
-evaluaciones.txt.
-
- */
 package ec.edu.espol.proyecto.model;
 
 import ec.edu.espol.proyecto.uil.Util;

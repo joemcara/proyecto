@@ -129,11 +129,8 @@ public class Premio {
         Premio nuevo = new Premio(id,puesto,descripcion,idConcurso);
         return nuevo; 
     }
-<<<<<<< HEAD
-    public static int idMascota(String nombremascota) {
-=======
+
      public static int idMascota(String nombremascota) {
->>>>>>> 395a708c9b90df222a50901de30ff1bd49be4901
         ArrayList<Concurso> lista = Premio.readFile("Mascota.txt");
         for (Concurso unico : lista) {
             if (unico.getNombre().equalsIgnoreCase(nombremascota)) {
