@@ -8,8 +8,10 @@ import ec.edu.espol.proyecto.model.Premio;
 import ec.edu.espol.proyecto.model.Concurso;
 import ec.edu.espol.proyecto.model.Criterio;
 import ec.edu.espol.proyecto.model.Dueño;
+import ec.edu.espol.proyecto.model.Evaluacion;
 import ec.edu.espol.proyecto.model.Inscripciones;
 import ec.edu.espol.proyecto.model.Mascota;
+import ec.edu.espol.proyecto.model.MiembroJurado;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -74,6 +76,13 @@ public class Menu {
                 case 6:
                     Inscripciones nuevaIns = Inscripciones.nextInscripcion(teclado);
                     nuevaIns.saveFile("Inscripcione.txt");
+                case 7:
+                    MiembroJurado nuevoJ = MiembroJurado.nextJurado(teclado);
+                    nuevoJ.saveFile("MiembroJurado.txt");
+                    break;                    
+                case 8:
+                    Evaluacion nuevoE = Evaluacion.nextEvaluacion(teclado);
+                    nuevoE.saveFile("Evaluacion.txt");                      
             }
 
         } while (caso != 9);
