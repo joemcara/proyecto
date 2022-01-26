@@ -4,11 +4,16 @@
  */
 package ec.edu.espol.controller;
 
+import ec.edu.espol.proyecto_interfaz.App;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 /**
@@ -19,15 +24,27 @@ import javafx.scene.layout.VBox;
 public class MenuController implements Initializable {
 
     @FXML
-    private VBox Vbox;
+    private Pane welcomeIMG;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        imgShow();
     }
 
-    
+    @FXML
+    private void showInfo(ActionEvent event) {
+
+    }
+
+    public void imgShow() {
+        Image img = new Image("img/"+"prueba.jpg");
+        ImageView imgview = new ImageView(img);
+        imgview.setFitWidth(300);
+        imgview.setFitHeight(300);
+        welcomeIMG.getChildren().add(imgview);
+    }
+
 }

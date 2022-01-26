@@ -1,29 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controller.MenuController">
-  <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-  </columnConstraints>
-  <rowConstraints>
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controller.MenuController">
    <children>
-      <Label text="INCIO DEL PROYECTO" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+      <MenuBar prefHeight="41.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Registro">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Concurso" />
+                  <MenuItem mnemonicParsing="false" text="Criterio" />
+                  <MenuItem mnemonicParsing="false" text="Dueño " />
+                  <MenuItem mnemonicParsing="false" text="Evaluacion" />
+                  <MenuItem mnemonicParsing="false" text="Inscripcion" />
+                  <MenuItem mnemonicParsing="false" text="Mascota" />
+                  <MenuItem mnemonicParsing="false" text="Jurado" />
+                  <MenuItem mnemonicParsing="false" text="Premio" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ediciones">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Concurso" />
+                  <MenuItem mnemonicParsing="false" text="Criterio" />
+                  <MenuItem mnemonicParsing="false" text="Dueño " />
+                  <MenuItem mnemonicParsing="false" text="Evaluacion" />
+                  <MenuItem mnemonicParsing="false" text="Inscripcion" />
+                  <MenuItem mnemonicParsing="false" text="Mascota" />
+                  <MenuItem mnemonicParsing="false" text="Jurado" />
+                  <MenuItem mnemonicParsing="false" text="Premio" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showInfo" text="info" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane fx:id="welcomeIMG" layoutX="327.0" layoutY="130.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="206.0" />
+      <Label layoutX="334.0" layoutY="68.0" prefHeight="41.0" prefWidth="192.0" text="Welcome UwU" textFill="#2b0a0a">
          <font>
-            <Font size="17.0" />
+            <Font name="Elephant" size="25.0" />
          </font>
       </Label>
-      <VBox fx:id="Vbox" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label layoutX="34.0" layoutY="327.0" text="Arriba encontra las opcines para el concurso " />
    </children>
-</GridPane>
+</AnchorPane>
