@@ -14,8 +14,8 @@
         <menus>
           <Menu mnemonicParsing="false" text="Registro">
             <items>
-              <MenuItem mnemonicParsing="false" text="Concurso" />
-                  <MenuItem mnemonicParsing="false" text="Criterio" />
+              <MenuItem fx:id="registroConcurso" mnemonicParsing="false" onAction="#irConcurso" text="Concurso" />
+                  <MenuItem fx:id="irCriterio" mnemonicParsing="false" onAction="#irCriterio" text="Criterio" />
                   <MenuItem mnemonicParsing="false" text="Dueño " />
                   <MenuItem mnemonicParsing="false" text="Evaluacion" />
                   <MenuItem mnemonicParsing="false" text="Inscripcion" />
@@ -26,14 +26,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Ediciones">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Concurso" />
-                  <MenuItem mnemonicParsing="false" text="Criterio" />
                   <MenuItem mnemonicParsing="false" text="Dueño " />
-                  <MenuItem mnemonicParsing="false" text="Evaluacion" />
-                  <MenuItem mnemonicParsing="false" text="Inscripcion" />
                   <MenuItem mnemonicParsing="false" text="Mascota" />
-                  <MenuItem mnemonicParsing="false" text="Jurado" />
-                  <MenuItem mnemonicParsing="false" text="Premio" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

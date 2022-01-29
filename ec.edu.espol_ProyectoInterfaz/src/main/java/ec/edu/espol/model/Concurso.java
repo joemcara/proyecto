@@ -167,7 +167,7 @@ public class Concurso {
 
     public void saveFile(String nomFile) {
         try ( BufferedWriter bf = new BufferedWriter(new FileWriter (nomFile,true))) {
-            bf.write(id + "|" + nombre + "|" + fechaActual + "|" + fechaInicioIns + "|" + fechaFinIns + "|" + tematica + "|" + costo);
+            bf.write(id + "|" + nombre + "|" + fechaActual + "|" + fechaInicioIns + "|" + fechaFinIns + "|" + tematica + "|" + costo+"\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
