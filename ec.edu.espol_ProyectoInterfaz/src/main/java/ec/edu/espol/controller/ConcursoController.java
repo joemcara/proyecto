@@ -16,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -79,7 +81,16 @@ public class ConcursoController implements Initializable {
         String tematica = txtTematica.getText();
         Concurso nuevo = new Concurso(id,nombreC,fechaA,fechaStart,fechaEnd,tematica,precio);
         nuevo.saveFile("concurso.txt");
-
+        // Va un if :v de comprobación creo no che
+        Alert a = new Alert(AlertType.CONFIRMATION,"Ha sido registrado Correctamente");
+        a.show();
+        txtNombre.clear();
+        txtDate.getEditor().clear();
+        txtDateStart.getEditor().clear();
+        txtDateEnd.getEditor().clear();        
+        txtPrecio.clear();
+        txtTematica.clear();
+        //
     }
 
 }
