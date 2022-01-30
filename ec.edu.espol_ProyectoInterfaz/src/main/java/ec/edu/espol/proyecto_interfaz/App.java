@@ -15,6 +15,11 @@ public class App extends Application {
 
     public static Scene scene;
 
+    /**
+     *
+     * @param stage
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         stage.setTitle("Concurso mascotas");
