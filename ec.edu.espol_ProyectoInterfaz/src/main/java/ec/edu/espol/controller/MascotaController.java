@@ -67,7 +67,7 @@ public class MascotaController implements Initializable {
 
     @FXML
     private void registrar(ActionEvent event) {
-        int idMascota = Util.nextID("criterio.txt");
+        int idMascota = Util.nextID("mascota.txt");
         int idDueño = Mascota.idDueño(TxtCorreo.getText());
         String nombre = TxtNombre.getText();
         String raza = TxtRaza.getText(); 

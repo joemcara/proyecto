@@ -4,6 +4,8 @@
  */
 package ec.edu.espol.controller;
 
+import ec.edu.espol.model.Criterio;
+import ec.edu.espol.model.Util;
 import ec.edu.espol.proyecto_interfaz.App;
 import java.io.IOException;
 import java.net.URL;
@@ -13,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -23,16 +26,19 @@ import javafx.scene.control.TextField;
  */
 public class CriterioController implements Initializable {
 
-    @FXML
     private TextField txtPlace;
-    @FXML
     private TextField txtFile;
-    @FXML
     private TextField txtText;
     @FXML
-    private Button btnSave;
-    @FXML
     private Button btnBack;
+    @FXML
+    private TextField TxtPuesto;
+    @FXML
+    private TextField TxtNombre;
+    @FXML
+    private TextField TxtDescripcion;
+    @FXML
+    private Button BttnRegis;
 
     /**
      * Initializes the controller class.
@@ -44,7 +50,18 @@ public class CriterioController implements Initializable {
 
     @FXML
     private void registro(ActionEvent event) {
-
+        int idCriterio= Util.nextID("criterio.txt");
+        String puesto = TxtPuesto.getText();
+        String nombre = TxtNombre.getText();
+        String descripcion= TxtDescripcion.getText();
+        int idConcurso = Criterio.idConcurso(nombre);   
+        Criterio nuevo = new Criterio(idCriterio, Integer.parseInt(puesto), descripcion, idConcurso);
+        nuevo.saveFile("criterio.txt");
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION,"Ha sido registrado Correctamente");
+        a.show();
+        TxtPuesto.clear();
+        TxtNombre.clear();
+        TxtDescripcion.clear();
     }
 
     @FXML

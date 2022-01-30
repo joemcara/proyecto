@@ -88,7 +88,7 @@ public class MenuController implements Initializable {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Dueño.fxml"));
             Parent root = fxmlLoader.load();
-            CriterioController jc = fxmlLoader.getController();
+            DueñoController jc = fxmlLoader.getController();
             App.scene.setRoot(root);
 
         } catch (IOException ex) {
