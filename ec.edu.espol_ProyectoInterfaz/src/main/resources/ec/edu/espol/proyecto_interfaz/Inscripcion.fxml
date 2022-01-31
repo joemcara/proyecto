@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controller.InscripcionController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="ec.edu.espol.controller.InscripcionController">
+   <children>
+      <Label alignment="CENTER" layoutX="200.0" layoutY="37.0" prefHeight="42.0" prefWidth="220.0" text="Inscripcion">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnBack" layoutX="184.0" layoutY="334.0" mnemonicParsing="false" onAction="#volver" text="Volver" />
+      <Button fx:id="btnRegistro" layoutX="397.0" layoutY="334.0" mnemonicParsing="false" onAction="#registrar" text="Registro" />
+      <Label layoutX="42.0" layoutY="106.0" prefHeight="17.0" prefWidth="167.0" text="Ingrese Nombre de la mascota:" />
+      <TextField fx:id="txtNombreMascota" layoutX="226.0" layoutY="102.0" />
+      <Label layoutX="42.0" layoutY="146.0" prefHeight="17.0" prefWidth="167.0" text="Ingrese Nombre del concurso:" />
+      <TextField fx:id="txtNombreConcurso" layoutX="226.0" layoutY="142.0" />
+      <Label layoutX="79.0" layoutY="179.0" prefHeight="17.0" prefWidth="121.0" text="Ingrese Valor a pagar:" />
+      <TextField fx:id="txtValorPagar" layoutX="226.0" layoutY="175.0" />
+      <Label layoutX="53.0" layoutY="220.0" prefHeight="17.0" prefWidth="167.0" text="Ingrese fecha de Inscripcion:" />
+      <DatePicker fx:id="txtFechaInscripcion" layoutX="223.0" layoutY="216.0" />
+   </children>
 </AnchorPane>

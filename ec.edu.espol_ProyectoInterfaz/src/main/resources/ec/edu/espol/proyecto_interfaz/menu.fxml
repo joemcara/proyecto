@@ -18,7 +18,7 @@
                   <MenuItem fx:id="irCriterio" mnemonicParsing="false" onAction="#irCriterio" text="Criterio" />
                   <MenuItem mnemonicParsing="false" onAction="#irDueño" text="Dueño " />
                   <MenuItem mnemonicParsing="false" onAction="#irEvaluacion" text="Evaluacion" />
-                  <MenuItem fx:id="irInscripcion" mnemonicParsing="false" onAction="#irEvaluacion" text="Inscripcion" />
+                  <MenuItem fx:id="irInscripcion" mnemonicParsing="false" onAction="#irInscripcion" text="Inscripcion" />
                   <MenuItem mnemonicParsing="false" onAction="#irMascota" text="Mascota" />
                   <MenuItem mnemonicParsing="false" onAction="#irJurado" text="Jurado" />
                   <MenuItem mnemonicParsing="false" onAction="#irPremio" text="Premio" />

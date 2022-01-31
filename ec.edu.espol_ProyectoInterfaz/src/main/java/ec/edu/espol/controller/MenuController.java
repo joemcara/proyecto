@@ -148,4 +148,17 @@ public class MenuController implements Initializable {
         }
     }
 
+    @FXML
+    private void irInscripcion(ActionEvent event) {
+         try {
+            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("Inscripcion.fxml"));
+            Parent root = fxmlLoader.load();
+            InscripcionController jc = fxmlLoader.getController();
+            App.scene.setRoot(root);
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }       
+    }
+
 }
