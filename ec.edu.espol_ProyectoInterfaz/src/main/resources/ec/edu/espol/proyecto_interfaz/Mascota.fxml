@@ -5,10 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="ec.edu.espol.controller.MascotaController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ec.edu.espol.controller.MascotaController">
    <children>
       <Label alignment="CENTER" layoutX="189.0" layoutY="34.0" prefHeight="42.0" prefWidth="220.0" text="Mascota">
          <font>
@@ -27,5 +27,7 @@
       <Button fx:id="btnRegistro" layoutX="384.0" layoutY="360.0" mnemonicParsing="false" onAction="#registrar" text="Registro" />
       <TextField fx:id="TxtCorreo" layoutX="204.0" layoutY="259.0" />
       <Label layoutX="44.0" layoutY="263.0" text="Ingrese el correo del Dueño:" />
+      <Pane fx:id="photo" layoutX="429.0" layoutY="152.0" prefHeight="95.0" prefWidth="127.0" />
+      <Button layoutX="460.0" layoutY="268.0" mnemonicParsing="false" onAction="#loadFoto" text="Subir Foto" />
    </children>
 </AnchorPane>
